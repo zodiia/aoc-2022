@@ -1,5 +1,3 @@
-package day01
-
 import readInput
 
 fun main() {
@@ -19,19 +17,9 @@ fun main() {
         return elves
     }
 
-    fun part1(input: List<String>): Int {
-        val elves = parseElves(input)
+    fun part1(input: List<String>) = parseElves(input).max()
 
-        // Find the elf with the most calories
-        return elves.max()
-    }
-
-    fun part2(input: List<String>): Int {
-        val elves = parseElves(input)
-
-        // Find the top three elves
-        return elves.sortedDescending().take(3).sum()
-    }
+    fun part2(input: List<String>) = parseElves(input).sortedDescending().take(3).sum()
 
     val input = readInput("Day01")
     println(part1(input))
